@@ -14,6 +14,7 @@ Response.destroy_all
 ActiveRecord::Base.transaction do
   user = User.create!(username: "drew")
   user2 = User.create!(username: "cindy")
+  user3 = User.create!(username: "ebear")
 
   poll = Poll.create!(title: "what title", user_id: user2.id)
   poll2 = Poll.create!(title: "Whats your poll?", user_id: user.id)
@@ -26,4 +27,6 @@ ActiveRecord::Base.transaction do
 
   r1 = Response.create!(user_id: user.id, answer_choice_id: a1.id)
   r2 = Response.create!(user_id: user2.id, answer_choice_id: a2.id)
+  r3 = Response.create!(user_id: user3.id, answer_choice_id: a1.id)
+  r4 = Response.create!(user_id: user3.id, answer_choice_id: a2.id)
 end
